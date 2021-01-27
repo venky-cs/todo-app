@@ -40,3 +40,7 @@ nav ul li a:hover{
   color: white;
   cursor: pointer;
 }
+.list input{
+  margin:10px 20px;
+  padding: 50px;
+}
