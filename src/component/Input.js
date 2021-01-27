@@ -6,8 +6,9 @@ function Input() {
     const [list, setList] = useState([])
     return (
         <div className='input'>
-            <input type="text" placeholder="add details" onChange={createText} value={text}/>
-            <button onClick={updateList}>Add</button>
+            <input type="text" placeholder="add details" onChange={createText} value={text} 
+                onKeyPress={(e) => (e.key === 'Enter' ? text.length >= 1 ? updateList() : null : null)}/>
+            <button onClick={text.length >=1 ? updateList : null}>Add</button>
 
             {list.map((list)=> <List list={list}/>)}
         </div>
