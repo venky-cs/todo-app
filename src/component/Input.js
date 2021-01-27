@@ -8,7 +8,7 @@ function Input() {
             <input type="text" placeholder="add details" onChange={createText} value={text}/>
             <button onClick={updateList}>Add</button>
 
-            {list.map((list)=> <li>{list}</li>)}
+            {list.map((list)=> <li key={list.id}>{list.value}</li>)}
         </div>
     )
 
@@ -17,7 +17,10 @@ function Input() {
     }
     function updateList(){
         console.log("List",list,"Text",text)
-        setList((prevState) => [...prevState,list.push(text)]);
+        setList( [...list,{
+            id:list.length,
+            value: text
+        }]);
         setText('')
         console.log("List",list,"Text",text)
     }
