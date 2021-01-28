@@ -10,7 +10,7 @@ function Input() {
                 onKeyPress={(e) => (e.key === 'Enter' ? text.length >= 1 ? updateList() : null : null)}/>
             <button onClick={text.length >=1 ? updateList : null}>Add</button>
 
-            {list.map((list)=> <List list={list}/>)}
+            {list.map((list)=> <List list={list} key={list.id}/>)}
         </div>
     )
 

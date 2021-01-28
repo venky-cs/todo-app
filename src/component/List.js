@@ -3,7 +3,7 @@ import React from 'react'
 function List({list}) {
     return (
         <div className='list'>
-            <input type='checkbox' key={list.id}/>
+            <input type='checkbox'/>
                 <label>{list.value}</label>
         </div>
     )
