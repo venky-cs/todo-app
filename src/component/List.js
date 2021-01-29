@@ -3,7 +3,7 @@ import React,{useState} from 'react'
 function List({list}) {
     const [select, setSelect] = useState(false)
     return (
-        <div className='list' onClick={() => setSelect(true)}>
+        <div className='list' onClick={() => setSelect((prevState) => !prevState)}>
             <input type='checkbox' checked={select}/>
                 <label style={select ?{textDecoration:'line-through'} :null}>{list.value}</label>
         </div>
