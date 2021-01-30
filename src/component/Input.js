@@ -4,6 +4,7 @@ import List from './List'
 function Input() {
     const [text,setText] =useState('')
     const [list, setList] = useState([])
+
     return (
         <div className='input'>
             <input type="text" placeholder="add details" onChange={createText} value={text} 
@@ -23,6 +24,10 @@ function Input() {
             id:list.length,
             value: text
         }]);
+        localStorage.setItem("todo", JSON.stringify([...list,{id:list.length,value:text}]))
+        let lists = localStorage.getItem("todo")
+        let parseList=JSON.parse(lists)
+        console.log(parseList)
         setText('')
     }
 }
