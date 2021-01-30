@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 
 function List({list}) {
+    console.log(list)
     const [select, setSelect] = useState(false)
     return (
         <div className='list' onClick={() => setSelect((prevState) => !prevState)}>
