@@ -1,12 +1,16 @@
 import React,{useState} from 'react'
 
-function List({list}) {
-    console.log(list)
+function List() {
+    let data = JSON.parse(localStorage.getItem('todo')) || []
     const [select, setSelect] = useState(false)
+    console.log(data)
     return (
-        <div className='list' onClick={() => setSelect((prevState) => !prevState)}>
+        <div>
+            {data.map((data) => <div className='list' onClick={() => setSelect((prevState) => !prevState)}>
             <input type='checkbox' checked={select}/>
-                <label style={select ?{textDecoration:'line-through'} :null}>{list.value}</label>
+                <label style={select ?{textDecoration:'line-through'} :null}>{data.value}</label>
+                </div>
+            )}
         </div>
     )
 }

@@ -15,7 +15,7 @@ function Input() {
                 onKeyPress={(e) => (e.key === 'Enter' ? text.length >= 1 ? updateList() : null : null)}/>
             <button onClick={text.length >=1 ? updateList : null}>Add</button>
 
-            {todo.map((list)=> <List list={list} key={list.id}/>)}
+            {/* {todo.map((list)=> <List list={list} key={list.id}/>)} */}
         </div>
     )
 
