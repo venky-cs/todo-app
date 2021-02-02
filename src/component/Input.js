@@ -15,7 +15,6 @@ function Input() {
                 onKeyPress={(e) => (e.key === 'Enter' ? text.length >= 1 ? updateList() : null : null)}/>
             <button onClick={text.length >=1 ? updateList : null}>Add</button>
 
-            {/* {todo.map((list)=> <List list={list} key={list.id}/>)} */}
         </div>
     )
 
@@ -26,9 +25,10 @@ function Input() {
         // console.log("List",list,"Text",text)
         setList( [...list,{
             id:list.length,
-            value: text
+            value: text,
+            complete:false
         }]);
-        localStorage.setItem("todo", JSON.stringify([...data,{id:list.length,value:text}]))
+        localStorage.setItem("todo", JSON.stringify([...data,{id:list.length,value:text,complete:false}]))
         
         let lists = localStorage.getItem("todo")
         let parseList = JSON.parse(lists)
@@ -36,6 +36,10 @@ function Input() {
 
         setTodo([...data, todo.push({ id: parseList.length, value: parseList.value })])
         setText('')
+    }
+
+    function setComplete(){
+
     }
 }
 
