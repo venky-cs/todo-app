@@ -9,7 +9,7 @@ function List() {
     }, [state])
     return (
         <div>
-            {state.map((data) => <div className='list' onClick={(e) => console.log(e.target.innerHTML)}>
+            {state.map((data) => <div className='list' onClick={(e) => (console.log(e.target.innerHTML))}>
             <input type='checkbox' checked={data.complete}/>
                 <label style={data.complete ?{textDecoration:'line-through'} :null}>{data.value}</label>
                 </div>
