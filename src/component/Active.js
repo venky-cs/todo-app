@@ -6,6 +6,7 @@ function Active() {
     console.log(data)
     let complete = data.filter((data) => data.complete === false)
     console.log(complete)
+    
     return (
         <div>
             <Input />

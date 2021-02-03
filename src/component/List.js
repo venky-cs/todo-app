@@ -6,7 +6,7 @@ function List() {
     const [state,setState] =useState([])
     useEffect(() => {
         setState(data)
-    }, [state])
+    }, [])
     return (
         <div>
             {state.map((data) => <div className='list' onClick={(e) => (console.log(e.target.innerHTML))}>
