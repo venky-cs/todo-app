@@ -1,8 +1,7 @@
 import React,{useContext} from 'react'
-import Input from './Input'
 import { TodoContext } from './Main'
 
-function Active() {
+function Active({test}) {
     
     const context = useContext(TodoContext)
     let contextFilter = context.filter((data) => data && data.complete === false)
@@ -17,6 +16,7 @@ function Active() {
                 
                     data[value].complete = true;
                     localStorage.setItem('todo',JSON.stringify(data))
+                    test()
                 }}>
                 <input type='checkbox' id={data &&data.id} checked={data &&data.complete} />
                 <label id={data &&data.id} style={data &&data.complete ? { textDecoration: 'line-through' } : null}>{data &&data.value}</label>

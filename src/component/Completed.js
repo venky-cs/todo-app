@@ -1,7 +1,7 @@
 import React,{useContext} from 'react'
 import { TodoContext } from './Main'
 
-function Completed() {
+function Completed({test}) {
     const context = useContext(TodoContext)
     let contextFilter = context.filter((data) => data && data.complete === true)
     return (
@@ -14,6 +14,7 @@ function Completed() {
                     let value = e.target.id;
                     data[value] = data.pop();
                     localStorage.setItem('todo', JSON.stringify(data))
+                    test()
                 }}>Delete</button>
             </div>
             )}
