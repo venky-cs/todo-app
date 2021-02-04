@@ -1,15 +1,20 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import { TodoContext } from './Main'
 
 function Completed() {
-    let data = JSON.parse(localStorage.getItem('todo')) || []
-    console.log(data)
-    let complete = data.filter((data)=> data.complete === true)
-    console.log(complete)
+    const context = useContext(TodoContext)
+    let contextFilter = context.filter((data) => data && data.complete === true)
     return (
         <div>
-            {complete.map((data) => <div className='list' onClick={(e) => (console.log(e.target.innerHTML))}>
-                <input type='checkbox' checked={data.complete} />
-                <label style={data.complete ? { textDecoration: 'line-through' } : null}>{data.value}</label>
+            {contextFilter.map((data) => <div className='list' onClick={(e) => (console.log(e.target.innerHTML))}>
+                <input type='checkbox' checked={data && data.complete} />
+                <label style={data && data.complete ? { textDecoration: 'line-through' } : null}>{data && data.value}</label>
+                <button id={data && data.id} onClick={(e) => {
+                    let data = JSON.parse(localStorage.getItem('todo'))
+                    let value = e.target.id;
+                    data[value] = data.pop();
+                    localStorage.setItem('todo', JSON.stringify(data))
+                }}>Delete</button>
             </div>
             )}
         </div>

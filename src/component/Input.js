@@ -1,5 +1,4 @@
 import React,{useState} from 'react'
-import List from './List'
 
 function Input() {
     let data=JSON.parse(localStorage.getItem('todo')) || []
@@ -38,9 +37,6 @@ function Input() {
         setText('')
     }
 
-    function setComplete(){
-
-    }
 }
 
 export default Input
