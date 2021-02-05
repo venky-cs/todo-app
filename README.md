@@ -10,7 +10,7 @@
   
     
   <h3>
-    <a href=""> <!-- palitan mo to  -->
+    <a href="https://601d8b7183c31428481bdc5c--venky-cs-todo-app.netlify.app/"> <!-- palitan mo to  -->
       Demo
     </a>
     <span> | </span>
@@ -18,7 +18,7 @@
       Solution
     </a>
     <span> | </span>
-    <a href="https://devchallenges.io/challenges/">
+    <a href="https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5">
       Challenge
     </a>
   </h3>
