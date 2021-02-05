@@ -9,8 +9,8 @@ export let TodoContext = ''
 function Main() {
     let data = JSON.parse(localStorage.getItem('todo')) || []
     console.log(data)
-    const [state, setState] = useState([data])
-    console.log('state testing.....', state, data)
+    // const [state, setState] = useState([data])
+    // console.log('state testing.....', state, data)
     const [test, setTest] = useState(false)
 
     const [text, setText] = useState('')
@@ -18,9 +18,9 @@ function Main() {
     const [todo, setTodo] = useState(data);
 
     useEffect(() => {
-        setState(data)
+        setTodo(data)
     }, [test])
-    TodoContext = React.createContext([state])
+    TodoContext = React.createContext([todo])
     return (
         <div className="main">
             <h3>#todo</h3>
@@ -61,7 +61,7 @@ function Main() {
 
                 </div>
                 <Switch>
-                    <TodoContext.Provider value={state}>
+                    <TodoContext.Provider value={todo}>
                         <Route exact path="/">
                             <All test={dataRender} />
                         </Route>
@@ -87,7 +87,7 @@ function Main() {
             value: text,
             complete: false
         }]);
-        localStorage.setItem("todo", JSON.stringify([...data, { id: list.length, value: text, complete: false }]))
+        localStorage.setItem("todo", JSON.stringify([...todo, { id: list.length, value: text, complete: false }]))
 
         let lists = localStorage.getItem("todo")
         let parseList = JSON.parse(lists)
