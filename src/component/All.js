@@ -10,8 +10,11 @@ function All({test}) {
                 context.map((data) => <div className='list' id={data && data.id} key={data && data.id}
                     onClick={(e) => {
                         let data = JSON.parse(localStorage.getItem('todo'))
-                        let value = JSON.parse(e.target.id);
-                        data[value].complete = true;
+                        let value = e.target.id;
+                        data.map(data => {
+                            if (data.id === value) { data.complete = true };
+                        })
+                        // data.id[value].complete = true;
                         localStorage.setItem('todo', JSON.stringify(data))
                         test()
                     }}>

@@ -12,8 +12,15 @@ function Completed({test}) {
                 <button id={data && data.id} onClick={(e) => {
                     let data = JSON.parse(localStorage.getItem('todo'))
                     let value = e.target.id;
-                    data[value] = data.pop();
-                    localStorage.setItem('todo', JSON.stringify(data))
+                    // data[value] = data.pop();
+                    const newTask=[]
+                    data.map(data => {
+                        let id = data.id;
+                        if(id != value){
+                            newTask.push(data)
+                        }
+                    })
+                    localStorage.setItem('todo', JSON.stringify(newTask))
                     test()
                 }}>Delete</button>
             </div>

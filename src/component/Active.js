@@ -12,9 +12,9 @@ function Active({test}) {
             onClick={(e) => {
                 let data = JSON.parse(localStorage.getItem('todo'))
                 let value = e.target.id;
-                console.log("Data TEsting....",data)
-                
-                    data[value].complete = true;
+                data.map(data => {
+                    if (data.id === value) { data.complete = true };
+                })
                     localStorage.setItem('todo',JSON.stringify(data))
                     test()
                 }}>

@@ -82,12 +82,13 @@ function Main() {
     }
     function updateList() {
         // console.log("List",list,"Text",text)
+        const generateID = () => Math.random().toString(36).substr(2, 9)
         setList([...list, {
-            id: list.length,
+            id: generateID(),
             value: text,
             complete: false
         }]);
-        localStorage.setItem("todo", JSON.stringify([...todo, { id: list.length, value: text, complete: false }]))
+        localStorage.setItem("todo", JSON.stringify([...todo, { id: generateID(), value: text, complete: false }]))
 
         let lists = localStorage.getItem("todo")
         let parseList = JSON.parse(lists)
