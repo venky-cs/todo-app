@@ -10,7 +10,7 @@
   
     
   <h3>
-    <a href="https://601d8b7183c31428481bdc5c--venky-cs-todo-app.netlify.app/"> <!-- palitan mo to  -->
+    <a href="https://venky-cs-todo-app.netlify.app/"> <!-- palitan mo to  -->
       Demo
     </a>
     <span> | </span>
