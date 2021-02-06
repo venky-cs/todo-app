@@ -80,3 +80,17 @@ label{
 .delBtn{
   float: right;
 }
+
+footer p{
+  font-family: 'Montserrat',
+  sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  position: relative;
+  bottom: -300px ;
+  width: 100%;
+  text-align: center;
+  color: #A9A9A9;
+  padding: 20px 10px;
+}
