@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Raleway:wght@700&display=swap');
+
 *{
   margin:0;
   padding: 0;
@@ -9,6 +11,10 @@
 }
 .main h3{
   margin: 30px 0px 50px 0px;
+  font-family: 'Raleway',
+  sans-serif;
+  font-size: 32px;
+  color: #333333;
 }
 nav ul{
   display:flex;
@@ -19,28 +25,58 @@ nav ul li{
   padding:20px 30px 15px 20px;
 }
 nav ul li a{
+  font-family: 'Montserrat',
+  sans-serif;
   text-decoration:none;
   padding: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333333;
 }
-nav ul li a:enabled{
+nav ul li a:active{
   border-bottom: 2px solid blue;
 }
 .input{
   margin-top: 30px;
 }
-.input input,.input button{
+.input input{
   border-radius: 12px;
   padding:10px 20px;
-  border: 1px solid grey;
+  border: 1px solid #BDBDBD;
   outline: none;
 }
 .input button{
   margin-left: 15px;
-  background:rgba(26, 142, 236, 0.952);
+  box-shadow: 0px 2px 6px rgba(127, 177, 243, 0.4);
+  background:#2F80ED;
+  font-family: 'Montserrat',
+  sans-serif;
+  font-weight: 600;
+  font-size: 14px;
   color: white;
   cursor: pointer;
+  border-radius:12px;
+  padding:10px 20px;
+  outline: none;
 }
 .list input{
   margin:10px 20px;
   padding: 50px;
+}
+
+.list{
+  width: 300px;
+}
+
+label{
+  font-family: 'Montserrat',
+  sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.delBtn{
+  float: right;
 }

@@ -9,7 +9,7 @@ function Completed({test}) {
             {contextFilter.map((data) => <div className='list' onClick={(e) => (console.log(e.target.innerHTML))}>
                 <input type='checkbox' checked={data && data.complete} />
                 <label style={data && data.complete ? { textDecoration: 'line-through' } : null}>{data && data.value}</label>
-                <button id={data && data.id} onClick={(e) => {
+                <button className="delBtn" id={data && data.id} onClick={(e) => {
                     let data = JSON.parse(localStorage.getItem('todo'))
                     let value = e.target.id;
                     // data[value] = data.pop();
@@ -25,7 +25,7 @@ function Completed({test}) {
                 }}>Delete</button>
             </div>
             )}
-            <button onClick={() =>{
+            <button className="delBtn" onClick={() =>{
             localStorage.removeItem('todo')
             test()}}>Delete All</button>
         </div>
