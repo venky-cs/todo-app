@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
 import All from './All'
 import Active from './Active'
 import Completed from './Completed'
@@ -28,13 +28,13 @@ function Main() {
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/">All</Link>
+                            <NavLink exact to="/" activeClassName="active" activeStyle={{ color: 'red' }}>All</NavLink>
                         </li>
                         <li>
-                            <Link to="/active">Active</Link>
+                            <NavLink exact to="/active" activeClassName="active" activeStyle={{ color: 'red' }}>Active</NavLink>
                         </li>
                         <li>
-                            <Link to="/completed">Completed</Link>
+                            <NavLink exact to="/completed" activeClassName="active" activeStyle={{ color: 'red' }}>Completed</NavLink>
                         </li>
                     </ul>
                 </nav>

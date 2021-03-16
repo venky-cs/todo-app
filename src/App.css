@@ -33,7 +33,7 @@ nav ul li a{
   font-size: 14px;
   color: #333333;
 }
-nav ul li a:active{
+.active{
   border-bottom: 2px solid blue;
 }
 .input{
