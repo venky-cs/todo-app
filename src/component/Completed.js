@@ -25,9 +25,9 @@ function Completed({test}) {
                 }}>Delete</button>
             </div>
             )}
-            <button className="delBtn" onClick={() =>{
+            {/* <button className="delBtn" onClick={() =>{
             localStorage.removeItem('todo')
-            test()}}>Delete All</button>
+            test()}}>Delete All</button> */}
         </div>
     )
 }
