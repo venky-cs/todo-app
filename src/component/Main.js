@@ -8,7 +8,7 @@ export let TodoContext = ''
 
 function Main() {
     let data = JSON.parse(localStorage.getItem('todo')) || []
-    console.log(data)
+    // console.log(data)
     // const [state, setState] = useState([data])
     // console.log('state testing.....', state, data)
     const [test, setTest] = useState(false)
@@ -21,62 +21,103 @@ function Main() {
         setTodo(data)
     }, [test])
     TodoContext = React.createContext([todo])
+
+    let positionRel = {
+        position:'relative',
+        bottom:'0',
+    }
+    let positionAbs = {
+        position:'absolute',
+        left:'40%',right:'0',
+        bottom:'0',
+    }
     return (
-        <div className="main">
-            <h3>#todo</h3>
-            <Router>
-                <nav>
-                    <ul>
-                        <li>
-                            <NavLink exact to="/" activeClassName="active" activeStyle={{ color: 'red' }}>All</NavLink>
-                        </li>
-                        <li>
-                            <NavLink exact to="/active" activeClassName="active" activeStyle={{ color: 'red' }}>Active</NavLink>
-                        </li>
-                        <li>
-                            <NavLink exact to="/completed" activeClassName="active" activeStyle={{ color: 'red' }}>Completed</NavLink>
-                        </li>
-                    </ul>
-                </nav>
-                <div className='input'>
-                    <input type="text" placeholder="add details" onChange={createText} value={text}
-                    // (e.key === 'Enter' ? text.length >= 1 ? updateList() : null : null)
-                    onKeyPress={(e) => {
-                        if(e.key === 'Enter' && text.length >=1){
-                            updateList();
-                            dataRender();
-                        }else{
-                            console.log('error')
-                        }
-                    }} />
-                    <button onClick={() => {
-                        if(text.length >=1){
-                            updateList();
-                            dataRender()
-                        }else{
-                            console.log('error')
-                        }
-                    }
-                    }>Add</button>
+      <div className="main">
+        <h3>#todo</h3>
+        <Router>
+          <nav>
+            <ul>
+              <li>
+                <NavLink
+                  exact
+                  to="/"
+                  activeClassName="active"
+                  activeStyle={{ color: 'red' }}
+                >
+                  All
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  exact
+                  to="/active"
+                  activeClassName="active"
+                  activeStyle={{ color: 'red' }}
+                >
+                  Active
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  exact
+                  to="/completed"
+                  activeClassName="active"
+                  activeStyle={{ color: 'red' }}
+                >
+                  Completed
+                </NavLink>
+              </li>
+            </ul>
+          </nav>
+          <div className="input">
+            <input
+              type="text"
+              placeholder="add details"
+              onChange={createText}
+              value={text}
+              // (e.key === 'Enter' ? text.length >= 1 ? updateList() : null : null)
+              onKeyPress={(e) => {
+                if (e.key === 'Enter' && text.length >= 1) {
+                  updateList();
+                  dataRender();
+                } else {
+                  console.log('error');
+                }
+              }}
+            />
+            <button
+              onClick={() => {
+                if (text.length >= 1) {
+                  updateList();
+                  dataRender();
+                } else {
+                  console.log('error');
+                }
+              }}
+            >
+              Add
+            </button>
+          </div>
+          <Switch>
+            <TodoContext.Provider value={todo}>
+              <Route exact path="/">
+                <All test={dataRender} />
+              </Route>
+              <Route path="/active">
+                <Active test={dataRender} />
+              </Route>
+              <Route path="/completed">
+                <Completed test={dataRender} />
+              </Route>
+            </TodoContext.Provider>
+          </Switch>
+        </Router>
 
-                </div>
-                <Switch>
-                    <TodoContext.Provider value={todo}>
-                        <Route exact path="/">
-                            <All test={dataRender} />
-                        </Route>
-                        <Route path="/active">
-                            <Active test={dataRender}/>
-                        </Route>
-                        <Route path="/completed">
-                            <Completed test={dataRender}/>
-                        </Route>
-                    </TodoContext.Provider>
-                </Switch>
-            </Router>
-
-        </div>
-    )
+        <footer style={data.length > 6 ? positionRel : positionAbs}>
+          <p>venky-cs @ DevChallenges.io</p>
+        </footer>
+      </div>
+    );
     function createText(e) {
         setText(e.target.value)
     }

@@ -14,6 +14,7 @@ function Active({test}) {
                 let value = e.target.id;
                 data.map(data => {
                     if (data.id === value) { data.complete = true };
+                    return data;
                 })
                     localStorage.setItem('todo',JSON.stringify(data))
                     test()

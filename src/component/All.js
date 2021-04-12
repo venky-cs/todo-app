@@ -3,7 +3,7 @@ import {TodoContext} from './Main'
 
 function All({test}) {
     const context = useContext(TodoContext)
-    console.log("context Testing....",context)
+    // console.log("context Testing....",context)
     return (
         <div>
             {
@@ -13,6 +13,7 @@ function All({test}) {
                         let value = e.target.id;
                         data.map(data => {
                             if (data.id === value) { data.complete = true };
+                            return data
                         })
                         // data.id[value].complete = true;
                         localStorage.setItem('todo', JSON.stringify(data))

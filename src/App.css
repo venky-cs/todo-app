@@ -78,9 +78,9 @@ label {
   float: right;
   border: none;
   width: 30%;
-  background-color:transparent;
+  background-color: transparent;
   outline: none;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 footer p {
@@ -88,12 +88,8 @@ footer p {
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
-  position: relative;
-  bottom: -300px;
-  width: 100%;
-  text-align: center;
+  width: 300px;
   color: #a9a9a9;
   padding: 20px 10px;
-  position: absolute;
-  bottom: 0;
+  text-align: center;
 }

@@ -26,9 +26,10 @@ function Completed({ test }) {
               const newTask = [];
               data.map((data) => {
                 let id = data.id;
-                if (id != value) {
+                if (id !== value) {
                   newTask.push(data);
                 }
+                return data;
               });
               localStorage.setItem('todo', JSON.stringify(newTask));
               test();
