@@ -20,16 +20,15 @@ nav ul {
   list-style-type: none;
   border-bottom: 1px solid grey;
 }
+
 nav ul li {
-  padding: 20px 30px 15px 20px;
-}
-nav ul li a {
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
-  padding: 15px;
+  padding: 20px 30px 15px 20px;
   font-weight: 600;
   font-size: 14px;
   color: #333333;
+  cursor: pointer;
 }
 .active {
   border-bottom: 2px solid blue;
@@ -66,7 +65,15 @@ nav ul li a {
   padding: 8px 0;
 }
 
+input[type='text'] {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+input[type='checkbox'],
 label {
+  cursor: pointer;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 18px;
